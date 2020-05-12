@@ -117,3 +117,25 @@ Return an array consisting of the largest number from each provided sub-array. F
     }
   
     console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));   // [1000, 1001, 857, 1]
+
+
+
+
+## 06. Confirm the Ending
+Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+    const confirmEnding = ( str, target ) => {
+    
+        // init new string
+        let newStr = '';
+
+        // extract the end of the string
+        newStr = str.substr( str.length - target.length );
+
+        // compare target to new string
+        return target === newStr;
+    }
+
+
+    console.log(confirmEnding("Bastian", "n")); // true
+    console.log(confirmEnding("Connor", "n"));  // false
