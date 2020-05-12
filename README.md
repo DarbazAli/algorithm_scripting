@@ -139,3 +139,46 @@ Check if a string (first argument, str) ends with the given target string (secon
 
     console.log(confirmEnding("Bastian", "n")); // true
     console.log(confirmEnding("Connor", "n"));  // false
+
+
+## 07. Repeat a String Repeat a String
+
+Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number.
+
+    const repeatStringNumTimes = (str, num) => {
+        let newStr = '';
+        for ( let i = 0; i < num; i++) {
+            newStr += str
+        }
+
+        return newStr;
+        }
+
+    console.log(repeatStringNumTimes('abc', 3));
+    console.log(repeatStringNumTimes('*', 8));
+    console.log(repeatStringNumTimes('*', -8));
+
+
+
+## 08.     Truncate a String
+
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+
+    const truncateString = (str, num) => {
+
+        // extract string based on length of num
+        let newStr = str.substr(0, num);
+        
+        // if given number is >= length of given string, return the string
+        if ( num >= str.length ) {
+            return str;
+        } else {
+        // else, add ... to the end of the string
+            newStr += "...";
+        return newStr;
+        }
+    }
+
+
+
+    console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)) // A-tisket...
