@@ -182,3 +182,78 @@ Truncate a string (first argument) if it is longer than the given maximum string
 
 
     console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8)) // A-tisket...
+
+
+## 09. Finders Keepers
+Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.
+
+    const findElement = (arr, func) => {
+        let num = 0;
+    
+        // loop through array
+        for ( let i = 0; i < arr.length; i++ ) {
+            if ( func(arr[i]) ) {
+                num = arr[i];
+                break;
+            } else {
+                num =  undefined;
+            } // end if
+        } // end for
+    
+        return num;
+    }
+
+
+    console.log(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }))  // 8
+
+
+
+## 10. Boo Who
+
+Boo who
+Check if a value is classified as a boolean primitive. Return true or false.
+
+Boolean primitives are true and false.
+
+    const booWho = bool => {
+        if ( typeof bool === 'boolean' ) {
+            return true
+        } else {
+            return false;
+        }
+    }
+
+    console.log(booWho(true))
+    console.log(booWho([1, 2, 3]))
+    console.log(booWho({'a': 1}))
+
+
+## 11. Title Case a Sentence
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+
+    function titleCase(str) {
+        // convert str to array
+        var arr = str.split(' ');
+    
+        // create an empty string
+        var newStr = '';
+        // loop through arr
+        for (var i = 0; i < arr.length; i++) {
+            // lowercase every char
+            var lower = arr[i].toLowerCase();
+            // make the first letter Capital
+            newStr += lower.charAt(0).toUpperCase() + lower.slice(1) + ' ';
+        }
+        // trim the last space
+        return newStr.trim();
+    }
+
+
+    console.log(titleCase("I'm a little tea pot"))
+    console.log(titleCase("sHoRt AnD sToUt"))
+    console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"))
+
+
+
